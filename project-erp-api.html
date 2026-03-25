@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP & Mobile APIs | Project Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        nav { padding: 1.5rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 3rem; }
+        .back-link { color: #8b5cf6; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 1rem; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .tags { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .tag { padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.05); border-radius: 50px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1); }
+        .content-box { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 20px; padding: 3rem; }
+        h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: #fff; }
+        p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        ul { color: var(--text-muted); padding-left: 1.5rem; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        li { margin-bottom: 0.5rem; }
+        .meta-info { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
+        .meta-info p { margin-bottom: 0.5rem; font-size: 1.05rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container" style="padding:0 2rem; display:flex; justify-content:space-between;">
+            <a href="index.html" class="logo" style="text-decoration:none; color:white; font-family:'Outfit'; font-weight:800; font-size:1.5rem;">VISHAL<span class="gradient-text">.</span></a>
+            <a href="index.html#projects" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Projects</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>ERP & Mobile App <span class="gradient-text">API</span></h1>
+        <div class="tags">
+            <span class="tag">ASP.NET MVC 5</span>
+            <span class="tag">C# .NET</span>
+            <span class="tag">JQuery</span>
+            <span class="tag">JavaScript</span>
+        </div>
+        
+        <div class="content-box">
+            <div class="meta-info">
+                <p><strong>Company:</strong> BillBox</p>
+                <p><strong>Environment:</strong> ASP.NET MVC 5, C# .NET, JQuery, JavaScript</p>
+            </div>
+            
+            <h3>Project Description</h3>
+            <p>Authored dynamic backend API layers for a large-scale ERP system and its companion multi-platform mobile application securely managing banking payment devices (sound boxes & QR codes) and facilitating remote field service operations.</p>
+            
+            <h3>Key Responsibilities & Features</h3>
+            <ul>
+                <li>Designed & implemented resilient REST APIs specifically for deep ERP integration bridging centralized device management, transparent transaction tracking, and instant status synchronizations.</li>
+                <li>Created specialized backend API endpoints to firmly support on-site scanning mechanisms, rigorous device validation logic, and precise activity logging.</li>
+                <li>Fortified all API endpoints with modern authentication and high-level encryption methodologies protecting consumer transaction metrics.</li>
+                <li>Generated extensive analytics covering service SLAs, device hardware performance over time, and user assignment history protocols.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

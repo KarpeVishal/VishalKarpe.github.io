@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vishal - Web Developer & .NET Specialist Portfolio">
+    <title>Vishal | Web Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Boxicons for modern icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -200px;
+            left: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            bottom: -300px;
+            right: -300px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Utilities */
+        .glass-panel {
+            background: var(--surface-color);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 3rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+            background: var(--primary-gradient);
+            border-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px -10px rgba(139, 92, 246, 0.7);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 20px 40px rgba(0, 0, 0, 0.6);
+            border: 3px solid #8b5cf6;
+            display: block;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-image:hover img {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3 i {
+            color: #8b5cf6;
+            font-size: 1.8rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-link {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* Contact */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+            font-size: 1.5rem;
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+        }
+
+        .contact-form {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 12px;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+
+            .hero-content,
+            .about-grid,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-text p {
+                margin: 0 auto 3rem;
+            }
+
+            .hero-buttons,
+            .social-links {
+                justify-content: center;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                /* Mobile menu would be built here */
+            }
+
+            .hero-image img {
+                height: 450px;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+                white-space: nowrap;
+                flex: 1;
+            }
+
+            .hero-image img {
+                height: 320px;
+                max-width: 260px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+            color: #FFF;
+        }
+
+        @media (max-width: 576px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">VISHAL<span class="gradient-text">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <h1>Hi, I'm <span class="gradient-text">Vishal</span></h1>
+                <p>A passionate .NET Developer crafting scalable web applications, robust APIs, and seamless digital
+                    experiences.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/vishal-karpe-53b613241?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://wa.me/919699651855" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+            </div>
+            <div class="hero-image reveal">
+                <img src="ProfilePhoto.png" alt="Vishal - Web Developer">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="reveal">About <span class="gradient-text">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I am a dedicated <strong>.NET Specialist</strong> with over 3.5 years of professional experience
+                        in building enterprise-grade web applications and backend systems.</p>
+                    <p>My expertise lies in designing optimal database architectures, creating efficient APIs, and
+                        developing responsive user interfaces that deliver exceptional user experiences.</p>
+                    <p>I thrive in solving complex problems and transforming ideas into robust software solutions
+                        tailored to meet business objectives.</p>
+                </div>
+                <div class="stats reveal">
+                    <div class="stat-item glass-panel">
+                        <div class="stat-number gradient-text">3.5+</div>
+                        <div class="stat-text">Years Experience</div>
+                    </div>
+                    <div class="stat-item glass-panel">
+                        <div class="stat-number gradient-text">20+</div>
+                        <div class="stat-text">Projects Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="reveal">Technical <span class="gradient-text">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-panel reveal">
+                    <h3><i class='bx bx-code-block'></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">OOPS</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel reveal">
+                    <h3><i class='bx bx-code-alt'></i> Scripting</h3>
+                    <div class="skill-tags">
+                        <span class="tag">JQuery</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel reveal">
+                    <h3><i class='bx bx-data'></i> Database & ORM</h3>
+                    <div class="skill-tags">
+                        <span class="tag">SQL Server 2018/2022</span>
+                        <span class="tag">Entity Framework</span>
+                        <span class="tag">Identity</span>
+                        <span class="tag">LINQ</span>
+                        <span class="tag">ADO.NET</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel reveal">
+                    <h3><i class='bx bx-globe'></i> Web Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Asp.Net MVC 5</span>
+                        <span class="tag">Asp.Net Core</span>
+                        <span class="tag">Web API</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel reveal">
+                    <h3><i class='bx bx-git-branch'></i> Version Control</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Bitbucket</span>
+                        <span class="tag">Git / GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="reveal">My <span class="gradient-text">Services</span></h2>
+            <div class="services-grid">
+                <div class="service-card glass-panel reveal">
+                    <i class='bx bx-laptop service-icon'></i>
+                    <h3>Web Development</h3>
+                    <p>Building high-performance, responsive, and engaging websites designed to capture your audience.
+                    </p>
+                </div>
+                <div class="service-card glass-panel reveal">
+                    <i class='bx bx-code-alt service-icon'></i>
+                    <h3>Web Applications</h3>
+                    <p>Developing scalable, enterprise-level web applications using cutting-edge .NET technologies.</p>
+                </div>
+                <div class="service-card glass-panel reveal">
+                    <i class='bx bx-data service-icon'></i>
+                    <h3>API Development</h3>
+                    <p>Designing secure, fast, and scalable RESTful APIs for seamless integrations.</p>
+                </div>
+                <div class="service-card glass-panel reveal">
+                    <i class='bx bx-cloud service-icon'></i>
+                    <h3>Hosting & Deployment</h3>
+                    <p>End-to-end guidance and setup for deploying your applications to cloud platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="reveal">Featured <span class="gradient-text">Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">MES System</h3>
+                        <p class="project-desc">Implemented full end-to-end traceability in the MES system, tracking raw
+                            materials through production processes to finished goods.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC 5</span>
+                            <span class="tag">C# .NET</span>
+                            <span class="tag">JQuery</span>
+                        </div>
+                        <a href="project-mes-1.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">KIT Locking System</h3>
+                        <p class="project-desc">Designed and implemented an integral module mapping model-specific FG
+                            parts and sequential scanning of child parts.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC 5</span>
+                            <span class="tag">C# .NET</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="project-kit-locking.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">MES & Stock Mgt</h3>
+                        <p class="project-desc">End-to-end material tracking, from raw material inwarding through
+                            production processing to finished goods creation and final packing.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC 5</span>
+                            <span class="tag">C# .NET</span>
+                            <span class="tag">JQuery</span>
+                        </div>
+                        <a href="project-mes-stock.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">ERP & Mobile APIs</h3>
+                        <p class="project-desc">Backend APIs for an ERP system and companion mobile app to manage
+                            banking payment devices and field service operations.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC 5</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Mobile Backend</span>
+                        </div>
+                        <a href="project-erp-api.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">Inventory & ERP</h3>
+                        <p class="project-desc">Comprehensive inventory and production management module integrated with
+                            ERP for a furniture manufacturing client.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC 5</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">ERP Integration</span>
+                        </div>
+                        <a href="project-inventory-erp.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card glass-panel reveal">
+                    <div class="project-content">
+                        <h3 class="project-title">Dispatch System</h3>
+                        <p class="project-desc">Validates dispatch workflows against invoice quantities, maps customer
+                            parts, handles vehicle assignments, and supports partial dispatch with integrated label
+                            printing.</p>
+                        <div class="project-tags">
+                            <span class="tag">ASP.NET MVC</span>
+                            <span class="tag">C# .NET</span>
+                        </div>
+                        <a href="project-dispatch-real.html" class="project-link">View Details <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="reveal">Get In <span class="gradient-text">Touch</span></h2>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class='bx bx-envelope'></i></div>
+                        <div class="contact-details">
+                            <h4>Email Me</h4>
+                            <p>karpevishal7212@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class='bx bx-phone'></i></div>
+                        <div class="contact-details">
+                            <h4>Call Me</h4>
+                            <p>+91 7028451855</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class='bx bx-map'></i></div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Pune, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form glass-panel reveal">
+                    <form action="https://formsubmit.co/karpevishal7212@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" name="name" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" placeholder="" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Vishal - .NET Specialist. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Animations Script -->
+    <script>
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919699651855" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class='bx bxl-whatsapp'></i>
+    </a>
+</body>
+
+</html>
